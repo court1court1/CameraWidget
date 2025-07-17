@@ -48,7 +48,7 @@
         document.getElementById("status").innerText = `Scanned: ${qrCodeMessage}`;
 
         if (isValidHttpUrl(qrCodeMessage)) {
-          window.location.href = qrCodeMessage; // open link in same window
+          window.top.location.href = qrCodeMessage; // open link in same window
         } else {
           alert("Scanned data is not a valid link: " + qrCodeMessage);
         }
