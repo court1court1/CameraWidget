@@ -2,26 +2,65 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Camera Feed</title>
+  <title>QR Code Scanner</title>
+  <script src="https://unpkg.com/html5-qrcode"></script>
   <style>
-    body { font-family: sans-serif; padding: 1rem; text-align: center; }
-    video { width: 100%; max-width: 500px; border: 2px solid #444; border-radius: 8px; }
+    body {
+      font-family: Arial, sans-serif;
+      padding: 1rem;
+      text-align: center;
+    }
+    #reader {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    #status {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
-  <h2>Camera View</h2>
-  <video id="video" autoplay playsinline></video>
+  <h2>Scan a QR Code</h2>
+  <div id="reader"></div>
+  <div id="status">Waiting for scan...</div>
 
   <script>
-    const video = document.getElementById('video');
+    const html5QrCode = new Html5Qrcode("reader");
 
-    navigator.mediaDevices.getUserMedia({ video: true })
-      .then(stream => {
-        video.srcObject = stream;
-      })
-      .catch(err => {
-        document.body.innerHTML += '<p style="color:red;">Error accessing camera: ' + err.message + '</p>';
-      });
+    function isValidHttpUrl(string) {
+      try {
+        const url = new URL(string);
+        return url.protocol === "http:" || url.protocol === "https:";
+      } catch (_) {
+        return false;
+      }
+    }
+
+    html5QrCode.start(
+      { facingMode: "environment" }, // back camera
+      {
+        fps: 10,
+        qrbox: { width: 250, height: 250 }
+      },
+      qrCodeMessage => {
+        document.getElementById("status").innerText = `Scanned: ${qrCodeMessage}`;
+
+        if (isValidHttpUrl(qrCodeMessage)) {
+          window.location.href = qrCodeMessage; // open link in same window
+        } else {
+          alert("Scanned data is not a valid link: " + qrCodeMessage);
+        }
+
+        html5QrCode.stop(); // stop scanning
+      },
+      errorMessage => {
+        // Optional: console.log(errorMessage);
+      }
+    ).catch(err => {
+      document.getElementById("status").innerText = `Error starting scanner: ${err}`;
+    });
   </script>
 </body>
 </html>
