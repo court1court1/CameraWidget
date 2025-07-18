@@ -9,11 +9,14 @@
       font-family: Arial, sans-serif;
       padding: 1rem;
       text-align: center;
+      background-color: #f4f4f4;
     }
     #reader {
       width: 100%;
       max-width: 500px;
       margin: 0 auto;
+      border: 2px solid #ccc;
+      border-radius: 8px;
     }
     #status {
       margin-top: 1rem;
@@ -39,7 +42,7 @@
     }
 
     html5QrCode.start(
-      { facingMode: "environment" }, // back camera
+      { facingMode: "environment" }, // Use the back camera
       {
         fps: 10,
         qrbox: { width: 250, height: 250 }
@@ -48,18 +51,23 @@
         document.getElementById("status").innerText = `Scanned: ${qrCodeMessage}`;
 
         if (isValidHttpUrl(qrCodeMessage)) {
+          // Automatically open in new tab
+          window.open(qrCodeMessage, "_blank", "noopener");
+
+          // Optional display
           document.getElementById("status").innerHTML = `
             <p>Scanned URL:</p>
-            <a href="${qrCodeMessage}" target="_blank" rel="noopener">Click here to open the link</a>
+            <a href="${qrCodeMessage}" target="_blank" rel="noopener">${qrCodeMessage}</a>
           `;
         } else {
           alert("Scanned data is not a valid link: " + qrCodeMessage);
         }
 
-        html5QrCode.stop(); // stop scanning
+        html5QrCode.stop(); // Stop scanning after a successful scan
       },
       errorMessage => {
-        // Optional: console.log(errorMessage);
+        // Optionally handle scan errors
+        // console.log(errorMessage);
       }
     ).catch(err => {
       document.getElementById("status").innerText = `Error starting scanner: ${err}`;
@@ -67,38 +75,3 @@
   </script>
 </body>
 </html>
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Embedded Jotform with QR Scanner</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      background: #f9f9f9;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    iframe {
-      border: none;
-      width: 375px;
-      height: 600px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      border-radius: 8px;
-    }
-  </style>
-</head>
-<body>
-  <h1>My Embedded Jotform</h1>
-  <iframe
-    id="JotFormIFrame-251958767846277"
-    title="Pro Bono Law Alberta App"
-    allow="geolocation; microphone; camera"
-    src="https://www.jotform.com/app/251958767846277?appEmbedded=1"
-  ></iframe>
-</body>
-</html>
-
