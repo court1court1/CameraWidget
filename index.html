@@ -1,77 +1,388 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US" data-lang="en-US" crm-lang="en-US" dir="ltr" crm-lcid="1033"
+	same-site-mode="None">
 <head>
-  <meta charset="utf-8" />
-  <title>QR Code Scanner</title>
-  <script src="https://unpkg.com/html5-qrcode"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 1rem;
-      text-align: center;
-      background-color: #f4f4f4;
-    }
-    #reader {
-      width: 100%;
-      max-width: 500px;
-      margin: 0 auto;
-      border: 2px solid #ccc;
-      border-radius: 8px;
-    }
-    #status {
-      margin-top: 1rem;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <h2>Scan a QR Code</h2>
-  <div id="reader"></div>
-  <div id="status">Waiting for scan...</div>
+		
+		<meta charset="utf-8" /><meta name="viewport" content="width=device-width,&#32;initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<script type="text/javascript" >
+				
+        </script>
+	<title>
+	
+		dfg
+		
+</title>
+		
+		<script src="/_portal/02f7c878-0e24-4e12-99fe-0c0873bf8a19/Resources/ResourceManager?lang=en-US"></script>
+	
+	<script type="text/javascript">
+        // Refresh all powerBI Iframes on Login in one Iframe
+        window.addEventListener('message', function (event) {
+            if (event && event.data && event.data == 'refreshPowerBI') {
+                $("iframe.powerbi").each(function () {
+                    this.src = this.src;
+                });
+            }
+        });
 
-  <script>
-    const html5QrCode = new Html5Qrcode("reader");
+        // Fix for incorrect viewport width setting in IE 10 on Windows Phone 8.
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var msViewportStyle = document.createElement("style");
+            msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));
+            document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+        }
+    </script>
+		
+	
+		
+		<link href="/bootstrap.min.css" rel="stylesheet" />
 
-    function isValidHttpUrl(string) {
-      try {
-        const url = new URL(string);
-        return url.protocol === "http:" || url.protocol === "https:";
-      } catch (_) {
-        return false;
-      }
-    }
+		<link href="https://content.powerapps.com/resource/powerappsportal/dist/font-awesome.BootstrapV5.bundle-2ce6efb497.css" onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;link&#32;=&#32;document.createElement(&#39;link&#39;);&#32;link.crossOrigin&#32;=&#32;target.crossOrigin;&#32;link.href&#32;=&#32;&#39;/dist/font-awesome.BootstrapV5.bundle-2ce6efb497.css&#39;;&#32;link.rel&#32;=&#32;&#39;stylesheet&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,link);" rel="stylesheet" />
 
-    html5QrCode.start(
-      { facingMode: "environment" }, // Use the back camera
-      {
-        fps: 10,
-        qrbox: { width: 250, height: 250 }
-      },
-      qrCodeMessage => {
-        document.getElementById("status").innerText = `Scanned: ${qrCodeMessage}`;
+				<link href="https://content.powerapps.com/resource/powerappsportal/dist/preform.BootstrapV5.bundle-a79c3ca7cf.css" onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;link&#32;=&#32;document.createElement(&#39;link&#39;);&#32;link.crossOrigin&#32;=&#32;target.crossOrigin;&#32;link.href&#32;=&#32;&#39;/dist/preform.BootstrapV5.bundle-a79c3ca7cf.css&#39;;&#32;link.rel&#32;=&#32;&#39;stylesheet&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,link);" rel="stylesheet" />
 
-        if (isValidHttpUrl(qrCodeMessage)) {
-          // Automatically open in new tab
-          window.open(qrCodeMessage, "_blank", "noopener");
 
-          // Optional display
-          document.getElementById("status").innerHTML = `
-            <p>Scanned URL:</p>
-            <a href="${qrCodeMessage}" target="_blank" rel="noopener">${qrCodeMessage}</a>
-          `;
-        } else {
-          alert("Scanned data is not a valid link: " + qrCodeMessage);
+		
+			
+
+
+		
+		<link href="/theme.css" rel="stylesheet" />
+<link href="/portalbasictheme.css" rel="stylesheet" />
+
+		
+		
+		
+		
+		
+	
+		
+		<link href="https://content.powerapps.com/resource/powerappsportal/dist/pwa-style.bundle-55718a4c0d.css" onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;link&#32;=&#32;document.createElement(&#39;link&#39;);&#32;link.crossOrigin&#32;=&#32;target.crossOrigin;&#32;link.href&#32;=&#32;&#39;/dist/pwa-style.bundle-55718a4c0d.css&#39;;&#32;link.rel&#32;=&#32;&#39;stylesheet&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,link);" rel="stylesheet" />
+
+		</head>
+<body data-sitemap-state="/dfg/:/"
+	data-dateformat="M/d/yyyy"
+	data-timeformat="h:mm tt"
+	data-datetimeformat="M/d/yyyy h:mm tt"
+	data-app-path="/"
+	data-ckeditor-basepath="/js/BaseHtmlContentDesigner/Libs/msdyncrm_/libs/ckeditor/"
+	data-case-deflection-url="/_services/search/02f7c878-0e24-4e12-99fe-0c0873bf8a19">
+
+
+	
+		<link href="https://content.powerapps.com/resource/powerappsportal/dist/pcf-style.bundle-373a0f4982.css" onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;link&#32;=&#32;document.createElement(&#39;link&#39;);&#32;link.crossOrigin&#32;=&#32;target.crossOrigin;&#32;link.href&#32;=&#32;&#39;/dist/pcf-style.bundle-373a0f4982.css&#39;;&#32;link.rel&#32;=&#32;&#39;stylesheet&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,link);" rel="stylesheet" />
+
+		
+	
+		
+
+	<div id="offlineNotificationBar" class="displayNone">
+		<img alt="web" class="col-3" id="web" onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;img&#32;=&#32;document.createElement(&#39;img&#39;);&#32;img.src&#32;=&#32;&#39;/css/images/web.png&#39;;&#32;img.alt&#32;=&#32;&#39;web&#39;;&#32;img.id&#32;=&#32;&#39;web&#39;&#32;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,img);&#32;target.remove();" src="https://content.powerapps.com/resource/powerappsportal/img/web.png" />
+		<div id="message">You&#8217;re offline. This is a read only version of the page.</div>
+		<div id="close" onclick="this.parentElement.style.display='none';"><img alt="close" class="col-3" onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;img&#32;=&#32;document.createElement(&#39;img&#39;);&#32;img.src&#32;=&#32;&#39;/css/images/close.png&#39;;&#32;img.alt&#32;=&#32;&#39;close&#39;;&#32;img.id&#32;=&#32;&#39;&#39;&#32;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,img);&#32;target.remove();" src="https://content.powerapps.com/resource/powerappsportal/img/close.png" /></div>
+	</div>
+
+	
+
+	<script type="text/javascript">
+        window.DisableCkEditor = window.DisableCkEditor || {};
+		DisableCkEditor.Value = 'False';
+    </script>
+
+	<script type="text/javascript">
+        var enableOmniChannelWidgetWithSiteCopilot = 'False';
+        if (enableOmniChannelWidgetWithSiteCopilot === "True" || enableOmniChannelWidgetWithSiteCopilot === "true") {
+            const authUrl = window.location.origin + "/_services/auth/portalusertoken";
+            const fetchWithRetries = async (url, options, retries) => {
+                try {
+                    const authResponse = await fetch(url, options);
+                    const token = await authResponse.text();
+                    sessionStorage['c2Token'] = token;
+                } catch (err) {
+                    if (retries === 1) throw err;
+                    return await fetchWithRetries(url, options, retries - 1);
+                }
+            };
+            fetchWithRetries(authUrl, { method: "POST" }, 4);
+        }
+    </script>
+
+	<script type="text/javascript">
+		var isPvaBotAuthenticated = sessionStorage['isPvaBotAuthenticated'];
+		var isPortalUserLoggedIn = 'False';
+
+        if ((isPvaBotAuthenticated != null || isPvaBotAuthenticated != undefined) && isPvaBotAuthenticated != isPortalUserLoggedIn) {
+			sessionStorage['triggerPvaBotSignOut'] = true;
+			sessionStorage.removeItem('c2Token');
+            sessionStorage.removeItem('directLinetoken');
+            sessionStorage.removeItem('conversation_Id');
+
+			sessionStorage.removeItem('bot_c2Token');
+			sessionStorage.removeItem('botdirectLinetoken');
+            sessionStorage.removeItem('botconversation_Id');
+		}
+		sessionStorage['isPvaBotAuthenticated'] = isPortalUserLoggedIn;
+    </script>
+
+	<script type="text/javascript">
+		window["CSPSettings"] = window["CSPSettings"] || {};
+		window["CSPSettings"].nonce = '';
+        window["FabricConfig"] = window["FabricConfig"] || {};
+        window["FabricConfig"].mergeStyles = window["FabricConfig"].mergeStyles || {};
+		window["FabricConfig"].mergeStyles.cspSettings = window["CSPSettings"];
+        window["Microsoft"] = window["Microsoft"] || {};
+		window["Microsoft"].Dynamic365 = {
+			Portal: {
+				
+				User: {
+					userName: '',
+					firstName: '',
+					lastName: '',
+					email: '',
+					contactId: '',
+					userRoles: [],
+				},
+				
+				version: '9.7.6.5',
+				type: 'PowerPages_BlankTemplate_V2',
+				id: '00c7cba6-4d5d-4a49-baf4-1ae438fbfb87', 
+				geo: 'CAN', 
+				tenant: 'b3294019-8998-4b19-9653-0d01571189ce', 
+				correlationId: '01f44b98-8a82-4d2f-b94c-273ed0e81c4f',
+                orgEnvironmentId: 'f744dee4-f7b7-4d66-99a1-2092ceb561b6',
+                orgId: '2b279564-2cd4-4374-bce1-17f8d0640bd4',
+                portalProductionOrTrialType: 'Trial',
+                isTelemetryEnabled: 'True',
+                InstrumentationSettings: {
+                    instrumentationKey: '197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172',
+                    collectorEndpoint: 'https://us-mobile.events.data.microsoft.com/OneCollector/1.0/'
+                },
+                timerProfileForBatching: 'NEAR_REAL_TIME',
+                activeLanguages: ["en-US"],
+                isClientApiEnabled: 'False'
+            }
         }
 
-        html5QrCode.stop(); // Stop scanning after a successful scan
-      },
-      errorMessage => {
-        // Optionally handle scan errors
-        // console.log(errorMessage);
-      }
-    ).catch(err => {
-      document.getElementById("status").innerText = `Error starting scanner: ${err}`;
+        // Mark request not cacheable if Dynamics365PortalAnalytics cookie is being refreshed by the server or if the cookie in request header is invalid
+		
+
+        // For client side telemetry intializing Dynamics365PortalAnalytics cookie object
+		
+        window["Microsoft"].Dynamic365.Portal.dynamics365PortalAnalytics = 'UE3U-G9oNwcvvaerRmOj7YuyzuK4K-CtWOgCEMukpBT4lCvxH7tIJPjtzJPiwZYQV5owPbqfSK8KvfToT25Q7biWqJYndWbDT2WX4zs9GhnJuHdQfTSd7w4MIPI6BXzVcmuAi3hv6pVktYxAy3Asyw2'; // CodeQL [SM00430] False Positive: only alphanumeric chars allowed, for non-alphanumeric char it will return INVALID_CHARACTERS_IN_COOKIE 
+		
+
+	</script>
+	
+	<script type="text/javascript">
+
+		
+    </script>
+
+	
+		
+	
+
+	<!-- add anti-forgery token-->
+	<div id="antiforgerytoken" data-url="/_layout/tokenhtml"></div>
+
+
+	
+		<!-- Client Telemetry init if telemetry enabled-->
+		<script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/client-telemetry.bundle-f9f45b65a6.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/client-telemetry.bundle-f9f45b65a6.js" type="text/javascript"></script>
+
+	
+	
+	<!-- Client Telemetry Wrapper init -->
+	<script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/client-telemetry-wrapper.bundle-633e70f51b.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/client-telemetry-wrapper.bundle-633e70f51b.js" type="text/javascript"></script>
+
+	<script>
+        window.clientLogWrapper = new ClientLogWrapper();
+    </script>
+	<script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/preform.BootstrapV5.moment_2_29_4.bundle-cf8e0fd942.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/preform.BootstrapV5.moment_2_29_4.bundle-cf8e0fd942.js" type="text/javascript"></script>
+
+	
+
+	<script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/pcf-dependency.bundle-805a1661b7.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/pcf-dependency.bundle-805a1661b7.js" type="text/javascript"></script>
+
+					       <script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/pcf.bundle-083747baa4.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/pcf.bundle-083747baa4.js" type="text/javascript"></script>
+
+					       <script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/pcf-extended.bundle-b0e01b5622.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/pcf-extended.bundle-b0e01b5622.js" type="text/javascript"></script>
+
+					
+	<!-- Default studio template. Please do not modify -->
+<div id="mainContent" class="wrapper-body" role="main">
+    <div class="page-copy">
+      <div class="xrm-editable-html&#32;xrm-attribute"><div class="xrm-attribute-value"><meta charset="UTF-8" /><title>Instant QR Redirect</title>
+<script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+<h2 style="text-align: center;">Please position your QR code in the frame below.</h2>
+<div id="reader" style="width: 100%; max-width: 500px; margin-top: auto; margin-right: auto; margin-bottom: auto; margin-left: auto;"></div>
+<script>
+  let html5QrCode;
+
+  function onScanSuccess(decodedText, decodedResult) {
+    // Stop scanning immediately
+    html5QrCode.stop().then(() => {
+      // Redirect to the scanned URL
+      window.location.href = decodedText;
+    }).catch(err => {
+      console.error("Failed to stop scanner", err);
+      window.location.href = decodedText; // Fallback redirect
     });
-  </script>
+  }
+
+  function onScanFailure(error) {
+    // Optional: log scan errors
+    console.warn(`QR scan failed: ${error}`);
+  }
+
+  window.onload = function () {
+    html5QrCode = new Html5Qrcode("reader");
+    const config = {
+      fps: 30,
+      qrbox: 250,
+      experimentalFeatures: {
+        useBarCodeDetectorIfSupported: true
+      }
+    };
+
+    html5QrCode.start(
+      { facingMode: "environment" },
+      config,
+      onScanSuccess,
+      onScanFailure
+    ).catch(err => {
+      console.error("Unable to start scanning", err);
+    });
+  };
+</script>
+<div class="row sectionBlockLayout text-start" style="display: flex; flex-wrap: wrap; margin: 0px; min-height: auto; padding: 8px;">
+  <div class="container" style="padding: 0px; display: flex; flex-wrap: wrap;"><div class="col-lg-12 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px;"></div></div>
+</div>
+</div></div>
+    </div>
+</div>
+
+
+	<script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/pcf-loader.bundle-f4a0e619b8.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/pcf-loader.bundle-f4a0e619b8.js" type="text/javascript"></script>
+
+		
+		
+	
+
+	
+		<div id="pp-native-controls-react-root"></div>
+<script>window._nativeControlConfig = { "publicPath":"https://content.powerapps.com/resource/powerappsportal/controls", "versions": {"pcf_loader":"0.0.40","pcf_controls":"3.21.14","mf_shared":"0.2.20","host":"0.9.27","data_grid":"1.10.16","controls_fluent_v9":"0.0.43"} }</script>
+<script defer="defer" src="https://content.powerapps.com/resource/powerappsportal/controls/host/main.664072c310.chunk.js"></script>
+		
+	
+	
+		
+	
+
+	<script type="text/javascript">
+
+        function trackCopilotCustomUsage(botSchema) {
+            const request = {
+                botSchemaName: botSchema
+            }
+            var json = JSON.stringify(request);
+            shell.ajaxSafePost({
+                type: "POST",
+                contentType: "application/json",
+                url: "/_services/copilot/TrackUsage",
+                data: json
+            }).done(function () {
+            }).fail(function (jqXhr) {
+            });
+        }
+
+        function findAndLogCustomCopilotUsage() {
+            const pageSource = document.documentElement.outerHTML;
+            const customPvaBotWebchatRegex = /api\.(preprod\.|test\.)?powerplatform\.(com|us|cn|appsplatform\.us)\/powervirtualagents\/botsbyschema\/([^/]+)\/directline\/token/;
+            const customPvaBotIframeRegex = /powerva\.microsoft\.com\/environments\/([0-9a-fA-F\-]+)\/bots\/([^/]+)\/webchat/;
+            const omniChannelRegex = /livechatwidget\/scripts\/LiveChatBootstrapper\.js/;
+
+            const matchPvaBotWebchat = pageSource.match(customPvaBotWebchatRegex);
+            if (matchPvaBotWebchat && matchPvaBotWebchat[3]) {
+                trackCopilotCustomUsage(matchPvaBotWebchat[3]);
+            }
+
+            const matchPvaBotIframe = pageSource.match(customPvaBotIframeRegex);
+            if (matchPvaBotIframe && matchPvaBotIframe[2]) {
+                trackCopilotCustomUsage(matchPvaBotIframe[2]);
+            }
+
+            const matchOmniChannel = pageSource.match(omniChannelRegex);
+            if (matchOmniChannel && matchOmniChannel[0]) {
+                trackCopilotCustomUsage("omnichannelWidget");
+            }
+        }
+
+        window.addEventListener("load", function () {
+            findAndLogCustomCopilotUsage();
+        });
+    </script>
+
+	
+	
+	
+	
+	
+	
+	<script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/bootstrap.BootstrapV5.bundle-be8391e97d.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/bootstrap.BootstrapV5.bundle-be8391e97d.js" type="text/javascript"></script>
+
+	<script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/postpreform.BootstrapV5.bundle-11a5a91493.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/postpreform.BootstrapV5.bundle-11a5a91493.js" type="text/javascript"></script>
+
+	<script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/app.BootstrapV5.bundle-2010696351.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/app.BootstrapV5.bundle-2010696351.js" type="text/javascript"></script>
+
+	<script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/default-1033.moment_2_29_4.bundle-eda4e638fd.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/default-1033.moment_2_29_4.bundle-eda4e638fd.js" type="text/javascript"></script>
+
+	
+	
+	
+	
+	<script>
+        //this event will update the title of the page based on active breadcrumb
+        $('.breadcrumb').ready(function () {
+            if ($('.breadcrumb').is(':visible')) {
+                document.querySelector('title').innerHTML = ($('.breadcrumb > li.active').text() + "");
+            }
+        });
+
+        function GoToNewEditor() {
+            var editCmsUrlSegment = "EditInCms";
+            var currentUrl = window.location.href;
+            if (currentUrl.indexOf('?') > -1) {
+                var urlSegments = currentUrl.split("?");
+                window.location.href = window.location.origin + '/' + editCmsUrlSegment + window.location.pathname + '?' + urlSegments[1];
+            }
+            else {
+                window.location.href = window.location.origin + '/' + editCmsUrlSegment + window.location.pathname;
+            }
+        }
+    </script>
+	
+		
+	
+	
+		
+			<script>
+                if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.getRegistrations().then(function (registrations) {
+                        for (let registration of registrations) {
+                            registration.unregister();
+                        }
+                    }).catch(function (err) {
+                        console.log('Service Worker unregister action failed: ', err);
+                    });
+                }
+            </script>
+		
+	
+		
+	<!--Start Show Session Expire Warning Popup here -->
+    
 </body>
 </html>
+<!-- Generated at 7/16/2025 4:54:16 AM -->
+<!-- Page OK -->
